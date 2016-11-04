@@ -1,0 +1,128 @@
+<!--
+  Generated template for the Todos page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar color="primary">
+        <ion-title>{{list.name}}</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+
+
+
+<ion-content padding>
+<tabs-top-menu></tabs-top-menu>>
+
+
+<div padding>
+  <ion-segment [(ngModel)]="Categorie">
+    <ion-segment-button value="info">
+      Mes infos
+    </ion-segment-button>
+    <ion-segment-button value="idea">
+      L'idée
+    </ion-segment-button>
+    <ion-segment-button value="product">
+      Mon produit
+    </ion-segment-button>
+    <ion-segment-button value="clients">
+      Mes Clients
+    </ion-segment-button>
+    <ion-segment-button value="ca">
+      Mon chiffre d'affaire
+    </ion-segment-button>
+        <ion-segment-button value="moyens">
+      Mes Moyens
+    </ion-segment-button>
+        <ion-segment-button value="investissements">
+      Mes investissements
+    </ion-segment-button>
+  </ion-segment>
+</div>
+
+<div [ngSwitch]="Categorie">
+
+
+  <ion-list *ngSwitchCase="'info'">
+     <ion-item class="no-todos" *ngIf="!todoService.todos || todoService.todos.length == 0">
+            Add Some Tasks To Your List
+        </ion-item>
+        <ion-item-sliding *ngFor="let todo of todoService.todos | prior">
+            <ion-item [ngStyle]="setTodoStyles(todo)">
+                <ion-label>{{todo.description}}</ion-label>
+                <ion-checkbox color="dark" [checked]="todo.isDone" (click)="toogleTodo(todo)"></ion-checkbox>
+            </ion-item>
+            <ion-item-options side="right">
+                <button ion-button color="dark" (click)="showEditTodo(todo)">
+                    <ion-icon name="create"></ion-icon>
+                    Edit
+                </button>
+                <button ion-button color="danger" (click)="removeTodos(todo)">
+                    <ion-icon name="remove-circle"></ion-icon>
+                    Remove
+                </button>
+            </ion-item-options>
+        </ion-item-sliding>
+
+        <ion-item-divider *ngIf="(todoService.todos | doneTodosPipe).length > 0">Done Tasks</ion-item-divider>
+        <ion-item *ngFor="let todo of todoService.todos | doneTodosPipe" [ngStyle]="setTodoStyles(todo)">
+            <ion-label>{{todo.description}}</ion-label>
+            <ion-checkbox color="dark" [checked]="todo.isDone" (click)="toogleTodo(todo)"></ion-checkbox>
+        </ion-item>
+
+  </ion-list>
+
+  <ion-list *ngSwitchCase="'idea'">
+    <ion-item>
+      <ion-thumbnail item-left>
+        <img src="img/thumbnail-kitten-1.jpg">
+      </ion-thumbnail>
+      <h2>Luna</h2>
+    </ion-item>
+    ...
+  </ion-list>
+
+
+   <ion-list *ngSwitchCase="'info'">
+    <ion-item>
+      <ion-thumbnail item-left>
+        <img src="img/thumbnail-kitten-1.jpg">
+      </ion-thumbnail>
+      <h2>Luna</h2>
+    </ion-item>
+    ...
+  </ion-list>
+
+   <ion-list *ngSwitchCase="'product'">
+   </ion-list>
+   
+   <ion-list *ngSwitchCase="'clients'">
+   </ion-list>
+   
+
+   <ion-list *ngSwitchCase="'ca'">
+   </ion-list>
+   
+
+   <ion-list *ngSwitchCase="'moyens'">
+   </ion-list>
+   
+
+   <ion-list *ngSwitchCase="'investissements'">
+   </ion-list>
+   
+</div>
+
+    
+    <ion-fab right bottom>
+        <button ion-fab mini (click)="showAddTodo()">
+            <ion-icon name="add"></ion-icon>
+        </button>
+    </ion-fab>
+</ion-content>

@@ -1,0 +1,47 @@
+page-todos {
+  .warning {
+    color: red;
+  }
+  button[fab] {
+    z-index: 10;
+  }
+  h3:first-child {
+    margin-top: 0.3em;
+  }
+
+  ion-list {
+    .no-todos {
+      border: none!important;
+      color: map-get($colors, primary);
+      font-style: italic;
+      margin-top: 50px;
+      text-align: center;
+      font-size: 1.3em;
+    }
+    .item-wrapper:first .item {
+      border-top: none;
+    }
+
+    .item-wrapper:last-child .item {
+      border-bottom: none;
+    }
+
+    .item:last-child {
+      border-bottom: none;
+    }
+
+    ion-item-sliding:last-of-type .item-inner {
+      border-bottom: none;
+    }
+
+    ion-item-divider {
+      padding-top: 10px;
+      background-color: transparent;
+      color: map-get($colors, light);
+      font-style: italic;
+    }
+  }
+}
+
+
+

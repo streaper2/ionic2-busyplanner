@@ -1,0 +1,32 @@
+page-lists {
+  ion-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    ion-item {
+      width: calc(49vw - 24px)!important;
+      height: calc(49vw - 24px)!important;
+      border: none !important;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)!important;
+      margin-bottom: 16px!important;
+
+      .item-inner {
+        border-bottom: none !important;
+      }
+      .input-wrapper {
+        text-align: center!important;
+      }
+
+      &.selected-list{
+        background-color: #DDD;
+        box-shadow: 0 3px 15px rgba(0, 0, 0, 0.6) !important;
+        transition: background-color 0.3s ease-out;
+      }
+    }
+  }
+
+  button[ion-fab]{
+    z-index: 10;
+  }
+}
