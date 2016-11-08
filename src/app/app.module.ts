@@ -11,6 +11,15 @@ import {Lists} from "../pages/lists/lists";
 import {Home} from "../pages/home/home";
 import {TabsPage} from "../pages/todos/tabs/tabs";
 import {ListsService} from "../shared/providers/lists-service";
+import {CaPage} from "../pages/ca/ca";
+import {IdeePage} from "../pages/idee/idee";
+import {ClientsPage} from "../pages/clients/clients";
+import {InfoPage} from "../pages/info/info";
+import {InvestissementsPage} from "../pages/investissements/investissements";
+import {MoyensPage} from "../pages/moyens/moyens";
+import {ProductPage} from "../pages/product/product";
+
+
 
 import { ScrollableTabs } from '../components/scrollable-tabs/scrollable-tabs';
 
@@ -25,7 +34,14 @@ import { ScrollableTabs } from '../components/scrollable-tabs/scrollable-tabs';
         Todos,
         Prior,
         ScrollableTabs,
-        DoneTodosPipe
+        DoneTodosPipe,
+        CaPage,
+        ClientsPage,
+        InfoPage,
+        InvestissementsPage,
+        MoyensPage,
+        ProductPage,
+        IdeePage
     ],
     imports: [
         IonicModule.forRoot(MyApp),
@@ -38,7 +54,14 @@ import { ScrollableTabs } from '../components/scrollable-tabs/scrollable-tabs';
         Lists,
         Home,
         Todos,
-        TabsPage
+        TabsPage,
+        CaPage,
+        ClientsPage,
+        InfoPage,
+        InvestissementsPage,
+        MoyensPage,
+        ProductPage,
+        IdeePage
     ],
     providers: [TodoService, ListsService]
 })

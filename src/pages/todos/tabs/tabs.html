@@ -1,13 +1,18 @@
 
 
 <ion-tabs [scrollable-tabs]="selectedTabIndex" color="{{tabsColor}}" tabsHighlight="true" tabsPlacement="{{tabsPlacement}}">
+	<ion-tab [root]="InfoPageRoot" (ionSelect)="selectTab(1)" tabIcon="information" tabTitle="Info"></ion-tab>
 	<ion-tab [root]="HomeRoot" (ionSelect)="selectTab(1)" tabIcon="home" tabTitle="Home"></ion-tab>
-	<ion-tab [root]="ListRoot" (ionSelect)="selectTab(2)" tabIcon="calendar" tabTitle="Calendar"></ion-tab>
-	
-
+	<ion-tab [root]="ListRoot" (ionSelect)="selectTab(2)" tabIcon="calendar" tabTitle="List"></ion-tab>
+	<ion-tab [root]="CaPageRoot" (ionSelect)="selectTab(3)" tabIcon="pie" tabTitle="Chiffre d'affaire'"></ion-tab>
+	<ion-tab [root]="ClientsPageRoot" (ionSelect)="selectTab(4)" tabIcon="people" tabTitle="Clients"></ion-tab>
+	<ion-tab [root]="IdeePageRoot" (ionSelect)="selectTab(5)" tabIcon="bulb" tabTitle="Idée"></ion-tab>
+	<ion-tab [root]="InvestissementsPageRoot" (ionSelect)="selectTab(6)" tabIcon="cash" tabTitle="Investissements"></ion-tab>
+	<ion-tab [root]="MoyensPageRoot" (ionSelect)="selectTab(7)" tabIcon="briefcase" tabTitle="Moyens"></ion-tab>
+	<ion-tab [root]="ProductPageRoot" (ionSelect)="selectTab(8)" tabIcon="pricetag" tabTitle="Produits"></ion-tab>
 </ion-tabs>
 
-<ion-list [style.marginTop.px]="200">
+<!--<ion-list [style.marginTop.px]="200">
 	<ion-item>
 		<ion-label>Color</ion-label>
 		<ion-select [(ngModel)]="tabsColor">
@@ -27,4 +32,4 @@
 			<ion-option value="wp">Windows Phone</ion-option>n>
 		</ion-select>
 	</ion-item>
-</ion-list>
+</ion-list>-->
