@@ -27,27 +27,31 @@
 <br/>
 <br/>
 <br/>
-
+<!--
   <ion-item class="no-todos" *ngIf="!todoService.todos || todoService.todos.length == 0">
             Add Some Tasks To Your List
         </ion-item>
-        <ion-item-sliding *ngFor="let todo of todoService.todos | prior">
-            <ion-item [ngStyle]="setTodoStyles(todo)">
-                <ion-label>{{todo.description}}</ion-label>
-                <ion-checkbox color="dark" [checked]="todo.isDone" (click)="toogleTodo(todo)"></ion-checkbox>
-            </ion-item>
-            <ion-item-options side="right">
-                <button ion-button color="dark" (click)="showEditTodo(todo)">
-                    <ion-icon name="create"></ion-icon>
-                    Edit
-                </button>
-                <button ion-button color="danger" (click)="removeTodos(todo)">
-                    <ion-icon name="remove-circle"></ion-icon>
-                    Remove
-                </button>
-            </ion-item-options>
-        </ion-item-sliding>
 
+    <ion-list >
+        <ion-item-sliding *ngFor="let todo of todoService.todos | prior" >
+                    <ion-item >
+                        <ion-label>{{todo.description}}</ion-label>
+                        <ion-checkbox color="dark" [checked]="todo.isDone" (tap)="toogleTodo(todo)"></ion-checkbox>
+                    </ion-item>
+
+
+                    <ion-item-options side="right">
+                        <button ion-button color="dark" (click)="showEditTodo(todo)">
+                            <ion-icon name="create"></ion-icon>
+                            Edit
+                        </button>
+                        <button ion-button color="primary" (click)="removeTodos(todo)">
+                            <ion-icon name="remove-circle"></ion-icon>
+                            Remove
+                        </button>
+                    </ion-item-options>
+        </ion-item-sliding>
+    </ion-list >
         <ion-item-divider *ngIf="(todoService.todos | doneTodosPipe).length > 0">Done Tasks</ion-item-divider>
         <ion-item *ngFor="let todo of todoService.todos | doneTodosPipe" [ngStyle]="setTodoStyles(todo)">
             <ion-label>{{todo.description}}</ion-label>
@@ -58,7 +62,7 @@
         <button ion-fab mini (click)="showAddTodo()">
             <ion-icon name="add"></ion-icon>
         </button>
-    </ion-fab>-->
+    </ion-fab>--> 
 <!--
 <div padding>
   <ion-segment [(ngModel)]="Categorie">
