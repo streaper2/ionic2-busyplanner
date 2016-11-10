@@ -11,15 +11,20 @@
 
 
 <ion-content padding style="background-color:antiquewhite">
-
-<ion-card>
+<!--
+<ion-card class="overlay">
+   <ion-fab top right>
+   <button ion-fab><ion-icon name="close"></ion-icon></button>
+ </ion-fab>
   <ion-card-header>
     Info list
   </ion-card-header>
-  <ion-card-content>
+  <ion-card-content >
    Ici vous rentrerez toute les infos vous concernant et concernant votre projet.
   </ion-card-content>
 </ion-card>
+-->
+
 
 <ion-item>
     <ion-label color="primary" floating>Nom</ion-label>
@@ -30,4 +35,44 @@
     <ion-input></ion-input>
 </ion-item>
 
+
+<ion-list>
+  <ion-item>
+    <ion-label color="primary" >Sexe</ion-label>
+    <ion-select [(ngModel)]="sexe">
+      <ion-option value="homme">Homme</ion-option>
+      <ion-option value="femme">Femme</ion-option>
+    </ion-select>
+  </ion-item>
+</ion-list>
+
+<ion-item>
+  <ion-label color="primary" placeholder="Date de naissance">Date de naissance</ion-label>
+  <ion-datetime  Format="MM/DD/YYYY" [(ngModel)]="myDate"></ion-datetime>
+</ion-item>
+<ion-item>
+    <ion-label color="primary" floating>Nationalité</ion-label>
+    <ion-input></ion-input>
+</ion-item>
+
+<ion-item>
+    <ion-label color="primary" floating>Adresse</ion-label>
+    <ion-input></ion-input>
+</ion-item>
+<ion-item>
+    <ion-label color="primary" floating>Ville</ion-label>
+    <ion-input></ion-input>
+</ion-item>
+<ion-item>
+    <ion-label color="primary" type="number" floating>Code Postal</ion-label>
+    <ion-input displayFormat="00 000"></ion-input>
+</ion-item>
+    <ion-fab right bottom color="green">
+        <button ion-fab mini>
+            <ion-icon name="checkmark"></ion-icon>
+        </button>
+    </ion-fab>
 </ion-content>
+
+<!-- sur cette page j'aimerai envoyer les données dans 
+la variable todo sur le storage-->

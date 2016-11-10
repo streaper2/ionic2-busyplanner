@@ -31,6 +31,7 @@ export class Todos {
 
     ionViewWillUnload() {
         this.todoService.saveLocally(this.list.id);
+
     }
 
 

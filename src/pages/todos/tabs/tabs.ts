@@ -3,16 +3,15 @@ import { Component } from '@angular/core';
 import { ToastController,NavController,NavParams } from 'ionic-angular';
 
 
-import { Lists } from '../../lists/lists';
 import { Home } from '../../home/home';
-
-import {CaPage} from "../../ca/ca";
+import {CaPage} from '../../ca/ca';
 import {ClientsPage} from "../../clients/clients";
 import {InfoPage} from "../../info/info";
 import {InvestissementsPage} from "../../investissements/investissements";
 import {MoyensPage} from "../../moyens/moyens";
 import {ProductPage} from "../../product/product";
 import {IdeePage} from "../../idee/idee";
+import {ListModel} from "../../../shared/list-model";
 
 @Component({
 
@@ -24,7 +23,6 @@ export class TabsPage {
 
   // this tells the tabs component which Pages
   // should be each tab's root Page
-  ListRoot:         any = Lists;
   HomeRoot:         any = Home;
   CaPageRoot:       any = CaPage;
   ClientsPageRoot:  any = ClientsPage;
@@ -40,10 +38,10 @@ export class TabsPage {
   tabsMode: string = "md";
   tabsPlacement: string = "top";
   
-  public firstParam:any;
+     public list: ListModel;
 
-  constructor(private toastCtrl: ToastController, public navCtrl: NavController,public params:NavParams) {
-    this.firstParam = params.get("list");
+  constructor(private toastCtrl: ToastController, public navCtrl: NavController,private navParams: NavParams,) {
+    this.list = this.navParams.get('list');
   }
 
   selectTab(index: number) {
